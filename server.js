@@ -60,14 +60,11 @@ async function dispatchWebhookWithBackoff(url, payload, attempt = 1) {
  * - Side Sleeper (< 130 lbs): Firmness 1-4, comfort layer >= 3 inches.
  * - Back/Stomach Sleeper (> 230 lbs): Coil gauge <= 13.5 (stiffer), base density >= 1.8 lb/ft³.
  */
-<<<<<<< HEAD
-=======
 // Serve the main frontend dashboard
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
->>>>>>> 8df3ab057c4b4db9e1cdb5bad8feed0a5940badf
 app.get('/api/products', async (req, res) => {
   try {
     const { sleeping_position, body_weight, category, max_price } = req.query;
@@ -327,8 +324,5 @@ app.get('/api/products/:id/schema', async (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`[PROCESS RUNNING] High-ticket aggregator API running on port ${PORT}`);
-<<<<<<< HEAD
 });
-=======
 });
->>>>>>> 8df3ab057c4b4db9e1cdb5bad8feed0a5940badf
