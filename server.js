@@ -63,6 +63,11 @@ async function dispatchWebhookWithBackoff(url, payload, attempt = 1) {
  * - Side Sleeper (< 130 lbs): Firmness 1-4, comfort layer >= 3 inches.
  * - Back/Stomach Sleeper (> 230 lbs): Coil gauge <= 13.5 (stiffer), base density >= 1.8 lb/ft³.
  */
+// Serve the main frontend dashboard
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 app.get('/api/products', async (req, res) => {
   try {
     const { sleeping_position, body_weight, category, max_price } = req.query;
