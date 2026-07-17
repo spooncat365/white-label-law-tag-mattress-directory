@@ -1,6 +1,6 @@
-/*
+/**
  * High-Ticket Directory Aggregator Backend Engine (Node.js/Express + PostgreSQL)
- * Implements:
+ * * Implements:
  * 1. Subjective-to-Objective Dynamic Filter Routing (using PG JSONB)
  * 2. Nested JSON-LD Generative Engine Optimization (GEO) Generator
  * 3. Pay-Per-Lead (PPL) Validation & Webhook Dispatcher (with Exponential Backoff)
@@ -13,14 +13,6 @@ const axios = require('axios');
 const crypto = require('crypto');
 
 const app = express();
-<<<<<<< HEAD
-
-=======
-app.get('/fo-verify.html', (req, res) => {
-    res.send('<meta name="fo-verify" content="22a2cf8e-1795-4ccf-9962-ee40e24ffb84" />');
-});
->>>>>>> 8df3ab057c4b4db9e1cdb5bad8feed0a5940badf
-// Ensure Express is configured to parse incoming JSON data
 app.use(express.json());
 
 // Initialize PostgreSQL Connection Pool using Environment Variables
@@ -67,14 +59,6 @@ async function dispatchWebhookWithBackoff(url, payload, attempt = 1) {
  * - Side Sleeper (< 130 lbs): Firmness 1-4, comfort layer >= 3 inches.
  * - Back/Stomach Sleeper (> 230 lbs): Coil gauge <= 13.5 (stiffer), base density >= 1.8 lb/ft³.
  */
-<<<<<<< HEAD
-=======
-// Serve the main frontend dashboard
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
-
->>>>>>> 8df3ab057c4b4db9e1cdb5bad8feed0a5940badf
 app.get('/api/products', async (req, res) => {
   try {
     const { sleeping_position, body_weight, category, max_price } = req.query;
@@ -203,6 +187,7 @@ app.get('/api/showrooms', async (req, res) => {
     const { latitude, longitude } = zipResult.rows[0];
 
     // Step 2: Use Haversine formulation to calculate nearby physical showroom inventories
+    // Distance calculation: 3959 * acos(cos(radians(Lat)) * cos(radians(latitude)) * cos(radians(longitude) - radians(Lng)) + sin(radians(Lat)) * sin(radians(latitude)))
     const showroomsQuery = `
       SELECT 
         rl.store_name, 
@@ -330,12 +315,7 @@ app.get('/api/products/:id/schema', async (req, res) => {
 });
 
 // Start Express Server Engine
-// Configured to use process.env.PORT dynamically so Railway can assign its own port
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`[PROCESS RUNNING] High-ticket aggregator API running on port ${PORT}`);
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 8df3ab057c4b4db9e1cdb5bad8feed0a5940badf

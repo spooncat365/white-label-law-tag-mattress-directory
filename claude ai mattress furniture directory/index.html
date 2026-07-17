@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SleepVault — B2B Supplier & Compliance Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons for High-Quality Visuals -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        luxury: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            500: '#64748b',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            gold: '#b45309',
+                            goldlight: '#f59e0b',
+                            emerald: '#059669'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0b0f19;
+            color: #f1f5f9;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(#0f172a, #0f172a) padding-box,
+                        linear-gradient(135deg, #334155, #b45309) border-box;
+            border: 1px solid transparent;
+        }
+        .gradient-active {
+            position: relative;
+            background: linear-gradient(#1e1b4b, #0f172a) padding-box,
+                        linear-gradient(135deg, #059669, #b45309) border-box;
+            border: 1px solid transparent;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Header/Navigation with Compliance Metadata -->
+    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Branding -->
+                <div class="flex items-center space-x-3">
+                    <div class="h-10 w-10 rounded-lg bg-gradient-to-tr from-luxury-gold to-yellow-500 flex items-center justify-center shadow-lg shadow-yellow-500/10">
+                        <i class="fa-solid fa-crown text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight text-white">SLEEP<span class="text-luxury-goldlight">VAULT</span></span>
+                        <span class="block text-[9px] text-slate-400 uppercase tracking-widest font-semibold leading-none">B2B Supplier Dashboard</span>
+                    </div>
+                </div>
+
+                <!-- Strategic Positioning Info Indicators -->
+                <div class="hidden md:flex items-center space-x-6 text-sm text-slate-300">
+                    <div class="flex items-center space-x-2 bg-slate-850 px-3 py-1.5 rounded-full border border-slate-800">
+                        <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span class="text-xs text-slate-400 font-mono tracking-wider">COMPLIANCE AUDIT VIEW ACTIVE</span>
+                    </div>
+                </div>
+
+                <!-- CTA Action Button -->
+                <div class="flex items-center space-x-4">
+                    <span class="text-[10px] bg-slate-800 text-slate-400 py-1 px-2.5 rounded border border-slate-700 tracking-wide">
+                        <i class="fa-solid fa-circle-info mr-1 text-luxury-goldlight"></i> SECURITY LAYER 2
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Subtitle Bar for Trust Anchor -->
+        <div class="bg-slate-950 border-t border-slate-800/80 py-2 px-4 text-center text-xs text-slate-400">
+            <span class="inline-flex items-center gap-1.5">
+                <i class="fa-solid fa-shield-halved text-emerald-500"></i>
+                Cross-Reference Link Matrix: Supply chain agreement compliance metrics are calculated algorithmically.
+                <a href="#schema-reference" class="text-luxury-goldlight hover:underline font-semibold ml-1">Explore Data Schema ↓</a>
+            </span>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Hero and Matrix Metrics Summary Overview Banner -->
+        <section class="mb-12 text-center md:text-left md:flex md:items-center md:justify-between gap-8 bg-gradient-to-br from-slate-900 to-slate-950 p-8 rounded-2xl border border-slate-800 shadow-2xl">
+            <div class="md:w-3/5">
+                <span class="text-xs uppercase text-luxury-goldlight font-bold tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Link Matrix Node Overview</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white mt-4 leading-tight">
+                    Fulfillment Agreements &amp; <br class="hidden md:inline">Supply Nodes Monitor
+                </h1>
+                <p class="text-slate-400 mt-4 text-sm md:text-base leading-relaxed">
+                    Automated supply chain integrity tracker. SleepVault maps retail storefront instances to backend fulfillment parameters, wholesale legal constraints, and unlisted production tags.
+                </p>
+                <div class="flex flex-wrap gap-4 mt-6">
+                    <div class="flex items-center text-xs text-slate-300 bg-slate-900 px-3 py-2 rounded-lg border border-slate-800">
+                        <i class="fa-solid fa-circle-check text-emerald-500 mr-2 text-sm"></i>
+                        <span>3 Vetted Stores Active</span>
+                    </div>
+                    <div class="flex items-center text-xs text-slate-300 bg-slate-900 px-3 py-2 rounded-lg border border-slate-800">
+                        <i class="fa-solid fa-cube text-luxury-goldlight mr-2 text-sm"></i>
+                        <span>6 Active Supply Agreements</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Real-time Directory Funnel Diagnostics Panel -->
+            <div class="md:w-2/5 mt-6 md:mt-0 bg-slate-950 p-5 rounded-xl border border-slate-800 font-mono text-xs">
+                <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <span class="text-slate-400 font-semibold text-[10px] uppercase tracking-wider"><i class="fa-solid fa-circle-nodes text-yellow-500 mr-1.5"></i>Live Telemetry Summary</span>
+                    <span class="text-emerald-500 text-[10px] bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Calculated</span>
+                </div>
+                <div class="space-y-4 mt-4">
+                    <div class="flex justify-between items-center bg-slate-900/50 p-3 rounded-lg border border-slate-800/50">
+                        <div>
+                            <span class="text-slate-500 block text-[10px] uppercase tracking-wider">Avg. Compliance Score</span>
+                            <span id="avg-score" class="text-2xl font-bold text-white font-sans mt-1 block">87.5</span>
+                        </div>
+                        <span class="text-slate-500 text-[10px] text-right block max-w-[100px]">across all agreements</span>
+                    </div>
+                    <div class="flex justify-between items-center bg-slate-900/50 p-3 rounded-lg border border-slate-800/50">
+                        <div>
+                            <span class="text-slate-500 block text-[10px] uppercase tracking-wider">Unlisted Spec Flags</span>
+                            <span id="flag-count" class="text-2xl font-bold text-amber-500 font-sans mt-1 block">3</span>
+                        </div>
+                        <span class="text-amber-500/80 text-[10px] text-right block max-w-[120px]">require manual review</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8" id="directory">
+            <!-- Left Side Filtering Sidebar -->
+            <aside class="lg:col-span-1 bg-slate-900 p-6 rounded-xl border border-slate-800 h-fit space-y-4">
+                <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-white"><i class="fa-solid fa-store mr-2 text-luxury-goldlight"></i>Retail Storefronts</h3>
+                </div>
+
+                <!-- Interactive Storefront Filtration Buttons -->
+                <div class="space-y-2 pt-2">
+                    <button id="btn-all" onclick="filterStore('all')" class="store-btn w-full py-3 px-4 text-xs text-left rounded-lg border transition duration-150 flex flex-col justify-between bg-luxury-800 border-luxury-gold text-white font-semibold">
+                        <span class="text-sm">All Stores</span>
+                        <span class="text-[10px] text-slate-400 font-mono mt-1 font-normal">6 supplier agreements</span>
+                    </button>
+                    
+                    <button id="btn-store-8831-alpha" onclick="filterStore('store-8831-alpha')" class="store-btn w-full py-3 px-4 text-xs text-left rounded-lg border border-slate-800 bg-slate-950 text-slate-400 hover:text-white hover:border-slate-700 transition duration-150 flex flex-col justify-between font-medium">
+                        <span class="text-sm">SleepVault Direct NY</span>
+                        <span class="text-[10px] text-slate-500 font-mono mt-1 font-normal">store-8831-alpha</span>
+                    </button>
+
+                    <button id="btn-store-9942-beta" onclick="filterStore('store-9942-beta')" class="store-btn w-full py-3 px-4 text-xs text-left rounded-lg border border-slate-800 bg-slate-950 text-slate-400 hover:text-white hover:border-slate-700 transition duration-150 flex flex-col justify-between font-medium">
+                        <span class="text-sm">EcoSleep Boutique</span>
+                        <span class="text-[10px] text-slate-500 font-mono mt-1 font-normal">store-9942-beta</span>
+                    </button>
+
+                    <button id="btn-store-1155-gamma" onclick="filterStore('store-1155-gamma')" class="store-btn w-full py-3 px-4 text-xs text-left rounded-lg border border-slate-800 bg-slate-950 text-slate-400 hover:text-white hover:border-slate-700 transition duration-150 flex flex-col justify-between font-medium">
+                        <span class="text-sm">National Bedding Aggregator</span>
+                        <span class="text-[10px] text-slate-500 font-mono mt-1 font-normal">store-1155-gamma</span>
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Right Side Directory Panel -->
+            <div class="lg:col-span-3 space-y-6">
+                
+                <!-- Sorting & Informational Context Dynamic Header bar -->
+                <div class="bg-slate-900 px-5 py-4 rounded-xl border border-slate-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                        <h2 id="page-title" class="text-base font-bold text-white tracking-tight">All Supplier Agreements</h2>
+                        <p id="page-sub" class="text-xs text-slate-400 mt-0.5">Showing all 6 active B2B supply agreements across 3 storefronts.</p>
+                    </div>
+                </div>
+
+                <!-- Dynamic Supplier Agreements Grid -->
+                <div id="product-directory-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- CARD 1: dropXL -->
+                    <div class="card rounded-xl border border-slate-800 bg-slate-900 transition-all duration-300 flex flex-col overflow-hidden shadow-lg hover:shadow-xl" data-store="store-8831-alpha">
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-[10px] font-mono tracking-wider font-semibold py-0.5 px-2 rounded bg-purple-950/60 text-purple-400 border border-purple-900/40">DROPSHIPPER</span>
+                                    <h4 class="text-lg font-bold text-white mt-2">dropXL</h4>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[9px] text-slate-500 uppercase tracking-wider block">Compliance</span>
+                                    <span class="text-lg font-bold text-emerald-500">94.5<span class="text-xs text-slate-500 font-normal">/100</span></span>
+                                </div>
+                            </div>
+                            
+                            <!-- Custom Embedded Score Tracking Bar -->
+                            <div class="w-full bg-slate-950 rounded-full h-1 border border-slate-800 overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 94.5%"></div>
+                            </div>
+
+                            <div class="p-3.5 bg-slate-950 border border-slate-850 rounded-lg text-xs space-y-1.5 font-mono">
+                                <div class="flex justify-between"><span class="text-slate-500">Storefront:</span><span class="text-slate-300 font-sans">SleepVault Direct NY</span></div>
+                                <div class="flex justify-between items-start"><span class="text-slate-500 mr-2">Coverage:</span>
+                                    <div class="flex flex-wrap gap-1 justify-end max-w-[180px]">
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-NY</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-NJ</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-CT</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-PA</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-center text-xs py-1.5 border-y border-slate-800/60">
+                                <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check mr-1.5"></i>Verified Compliant</span>
+                                <span class="font-mono text-[10px] text-slate-500">AGR · a1b2c3d4</span>
+                            </div>
+
+                            <div class="pt-1">
+                                <a href="https://www.dropxl.com/beds-and-accessories.html" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-950 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 py-2 px-4 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5">
+                                    <span>Connect to Node Matrix</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2: Mattress Makers -->
+                    <div class="card rounded-xl border border-slate-800 bg-slate-900 transition-all duration-300 flex flex-col overflow-hidden shadow-lg hover:shadow-xl" data-store="store-8831-alpha">
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-[10px] font-mono tracking-wider font-semibold py-0.5 px-2 rounded bg-sky-950/60 text-sky-400 border border-sky-900/40">WHOLESALE</span>
+                                    <h4 class="text-lg font-bold text-white mt-2">Mattress Makers</h4>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[9px] text-slate-500 uppercase tracking-wider block">Compliance</span>
+                                    <span class="text-lg font-bold text-emerald-500">98.0<span class="text-xs text-slate-500 font-normal">/100</span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="w-full bg-slate-950 rounded-full h-1 border border-slate-800 overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 98%"></div>
+                            </div>
+
+                            <div class="p-3.5 bg-slate-950 border border-slate-850 rounded-lg text-xs space-y-1.5 font-mono">
+                                <div class="flex justify-between"><span class="text-slate-500">Storefront:</span><span class="text-slate-300 font-sans">SleepVault Direct NY</span></div>
+                                <div class="flex justify-between items-start"><span class="text-slate-500 mr-2">Coverage:</span>
+                                    <div class="flex flex-wrap gap-1 justify-end max-w-[180px]">
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-CA</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-NV</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-AZ</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-center text-xs py-1.5 border-y border-slate-800/60">
+                                <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check mr-1.5"></i>Verified Compliant</span>
+                                <span class="font-mono text-[10px] text-slate-500">AGR · b2c3d4e5</span>
+                            </div>
+
+                            <div class="pt-1">
+                                <a href="https://mattressmakers.us/pages/wholesale" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-950 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 py-2 px-4 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5">
+                                    <span>Connect to Node Matrix</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3: White Lotus Home -->
+                    <div class="card rounded-xl border border-slate-800 bg-slate-900 transition-all duration-300 flex flex-col overflow-hidden shadow-lg hover:shadow-xl" data-store="store-9942-beta">
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-[10px] font-mono tracking-wider font-semibold py-0.5 px-2 rounded bg-sky-950/60 text-sky-400 border border-sky-900/40">WHOLESALE</span>
+                                    <h4 class="text-lg font-bold text-white mt-2">White Lotus Home</h4>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[9px] text-slate-500 uppercase tracking-wider block">Compliance</span>
+                                    <span class="text-lg font-bold text-emerald-500">99.5<span class="text-xs text-slate-500 font-normal">/100</span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="w-full bg-slate-950 rounded-full h-1 border border-slate-800 overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 99.5%"></div>
+                            </div>
+
+                            <div class="p-3.5 bg-slate-950 border border-slate-850 rounded-lg text-xs space-y-1.5 font-mono">
+                                <div class="flex justify-between"><span class="text-slate-500">Storefront:</span><span class="text-slate-300 font-sans">EcoSleep Boutique</span></div>
+                                <div class="flex justify-between items-start"><span class="text-slate-500 mr-2">Coverage:</span>
+                                    <div class="flex flex-wrap gap-1 justify-end max-w-[180px]">
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-ALL</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Alert Structural Insertion Area -->
+                            <div class="bg-amber-950/20 border border-amber-900/30 p-3 rounded-lg text-xs text-amber-500 space-y-1">
+                                <div class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-triangle-exclamation"></i> Unlisted Spec Parameters Detected:</div>
+                                <div class="font-mono text-[10px] bg-slate-950 p-1 rounded border border-slate-850/60 inline-block text-amber-400">exact_cotton_harvest_origin_date</div>
+                            </div>
+
+                            <div class="flex justify-between items-center text-xs py-1.5 border-y border-slate-800/60">
+                                <span class="text-amber-500 font-semibold"><i class="fa-solid fa-triangle-exclamation mr-1.5"></i>Review Flagged</span>
+                                <span class="font-mono text-[10px] text-slate-500">AGR · c3d4e5f6</span>
+                            </div>
+
+                            <div class="pt-1">
+                                <a href="https://www.whitelotushome.com/white-lotus-home-information-center/wholesale-info.html" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-950 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 py-2 px-4 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5">
+                                    <span>Connect to Node Matrix</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 4: FoamTex USA -->
+                    <div class="card rounded-xl border border-slate-800 bg-slate-900 transition-all duration-300 flex flex-col overflow-hidden shadow-lg hover:shadow-xl" data-store="store-9942-beta">
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-[10px] font-mono tracking-wider font-semibold py-0.5 px-2 rounded bg-purple-950/60 text-purple-400 border border-purple-900/40">DROPSHIPPER</span>
+                                    <h4 class="text-lg font-bold text-white mt-2">FoamTex USA</h4>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[9px] text-slate-500 uppercase tracking-wider block">Compliance</span>
+                                    <span class="text-lg font-bold text-amber-500">82.0<span class="text-xs text-slate-500 font-normal">/100</span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="w-full bg-slate-950 rounded-full h-1 border border-slate-800 overflow-hidden">
+                                <div class="bg-amber-500 h-full rounded-full" style="width: 82%"></div>
+                            </div>
+
+                            <div class="p-3.5 bg-slate-950 border border-slate-850 rounded-lg text-xs space-y-1.5 font-mono">
+                                <div class="flex justify-between"><span class="text-slate-500">Storefront:</span><span class="text-slate-300 font-sans">EcoSleep Boutique</span></div>
+                                <div class="flex justify-between items-start"><span class="text-slate-500 mr-2">Coverage:</span>
+                                    <div class="flex flex-wrap gap-1 justify-end max-w-[180px]">
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-TX</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-OK</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-LA</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-NM</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-amber-500/10 border border-amber-500/20 p-3 rounded-lg text-xs text-amber-600 space-y-1.5">
+                                <div class="font-bold flex items-center gap-1.5 text-amber-500"><i class="fa-solid fa-circle-exclamation"></i> 2 Unlisted Spec Keys Located:</div>
+                                <div class="flex flex-wrap gap-1">
+                                    <span class="font-mono text-[9px] bg-slate-950 px-1.5 py-0.5 rounded border border-slate-850 text-amber-400">voc_emission_certification_link</span>
+                                    <span class="font-mono text-[9px] bg-slate-950 px-1.5 py-0.5 rounded border border-slate-850 text-amber-400">density_variance_tolerance</span>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-center text-xs py-1.5 border-y border-slate-800/60">
+                                <span class="text-amber-500 font-semibold"><i class="fa-solid fa-circle-exclamation mr-1.5"></i>Review Recommended</span>
+                                <span class="font-mono text-[10px] text-slate-500">AGR · d4e5f6g7</span>
+                            </div>
+
+                            <div class="pt-1">
+                                <a href="https://www.foamtexusa.com/dropshipping" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-950 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 py-2 px-4 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5">
+                                    <span>Connect to Node Matrix</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 5: Brooklyn Bedding -->
+                    <div class="card rounded-xl border border-slate-800 bg-slate-900 transition-all duration-300 flex flex-col overflow-hidden shadow-lg hover:shadow-xl" data-store="store-1155-gamma">
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-[10px] font-mono tracking-wider font-semibold py-0.5 px-2 rounded bg-sky-950/60 text-sky-400 border border-sky-900/40">WHOLESALE</span>
+                                    <h4 class="text-lg font-bold text-white mt-2">Brooklyn Bedding</h4>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[9px] text-slate-500 uppercase tracking-wider block">Compliance</span>
+                                    <span class="text-lg font-bold text-emerald-500">96.2<span class="text-xs text-slate-500 font-normal">/100</span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="w-full bg-slate-950 rounded-full h-1 border border-slate-800 overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 96.2%"></div>
+                            </div>
+
+                            <div class="p-3.5 bg-slate-950 border border-slate-850 rounded-lg text-xs space-y-1.5 font-mono">
+                                <div class="flex justify-between"><span class="text-slate-500">Storefront:</span><span class="text-slate-300 font-sans">National Bedding Aggregator</span></div>
+                                <div class="flex justify-between items-start"><span class="text-slate-500 mr-2">Coverage:</span>
+                                    <div class="flex flex-wrap gap-1 justify-end max-w-[180px]">
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-ALL</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">CA-ALL</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-center text-xs py-1.5 border-y border-slate-800/60">
+                                <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check mr-1.5"></i>Verified Compliant</span>
+                                <span class="font-mono text-[10px] text-slate-500">AGR · e5f6g7h8</span>
+                            </div>
+
+                            <div class="pt-1">
+                                <a href="https://brooklynbedding.com/pages/wholesale" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-950 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 py-2 px-4 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5">
+                                    <span>Connect to Node Matrix</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 6: Syncee Marketplace -->
+                    <div class="card rounded-xl border border-slate-800 bg-slate-900 transition-all duration-300 flex flex-col overflow-hidden shadow-lg hover:shadow-xl" data-store="store-1155-gamma">
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-[10px] font-mono tracking-wider font-semibold py-0.5 px-2 rounded bg-pink-950/60 text-pink-400 border border-pink-900/40">MARKETPLACE</span>
+                                    <h4 class="text-lg font-bold text-white mt-2">Syncee Marketplace</h4>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[9px] text-slate-500 uppercase tracking-wider block">Compliance</span>
+                                    <span class="text-lg font-bold text-rose-500">74.5<span class="text-xs text-slate-500 font-normal">/100</span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="w-full bg-slate-950 rounded-full h-1 border border-slate-800 overflow-hidden">
+                                <div class="bg-rose-500 h-full rounded-full" style="width: 74.5%"></div>
+                            </div>
+
+                            <div class="p-3.5 bg-slate-950 border border-slate-850 rounded-lg text-xs space-y-1.5 font-mono">
+                                <div class="flex justify-between"><span class="text-slate-500">Storefront:</span><span class="text-slate-300 font-sans">National Bedding Aggregator</span></div>
+                                <div class="flex justify-between items-start"><span class="text-slate-500 mr-2">Coverage:</span>
+                                    <div class="flex flex-wrap gap-1 justify-end max-w-[180px]">
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">GLOBAL</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-rose-950/20 border border-rose-900/30 p-3 rounded-lg text-xs text-rose-400 space-y-1.5">
+                                <div class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-triangle-exclamation"></i> 2 Critical Unlisted Specs:</div>
+                                <div class="flex flex-col gap-1">
+                                    <span class="font-mono text-[9px] bg-slate-950 px-1.5 py-0.5 rounded border border-rose-900/40 text-rose-300 truncate">third_party_manufacturer_identities</span>
+                                    <span class="font-mono text-[9px] bg-slate-950 px-1.5 py-0.5 rounded border border-rose-900/40 text-rose-300 truncate">standardized_warranty_terms</span>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-center text-xs py-1.5 border-y border-slate-800/60">
+                                <span class="text-rose-500 font-semibold"><i class="fa-solid fa-circle-xmark mr-1.5"></i>High Risk Parameters</span>
+                                <span class="font-mono text-[10px] text-slate-500">AGR · f6g7h8i9</span>
+                            </div>
+
+                            <div class="pt-1">
+                                <a href="https://syncee.com/collections/1/products?search=mattresses&searchType=PRODUCTS" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-950 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 py-2 px-4 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5">
+                                    <span>Connect to Node Matrix</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Empty State Component View -->
+                    <div class="hidden col-span-2 py-12 text-center text-slate-500 border border-dashed border-slate-800 rounded-xl bg-slate-900/40" id="empty-state">
+                        <i class="fa-solid fa-folder-open text-3xl mb-3 text-slate-600"></i>
+                        <p class="text-sm">No supplier agreements mapped to this specific storefront endpoint.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SCHEMA & API CODE BLOCK CONTAINER SECTION                    -->
+        <!-- ============================================================ -->
+        <section id="schema-reference" class="mt-16 pt-8 border-t-2 border-slate-800">
+            <div class="max-w-3xl mb-6">
+                <h3 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+                    <i class="fa-solid fa-database text-luxury-goldlight"></i> Schema &amp; Production API Reference
+                </h3>
+                <p class="text-sm text-slate-400 mt-1">
+                    Production-ready Relational PostgreSQL DDL definitions alongside mock JSON structured interaction payloads.
+                </p>
+            </div>
+
+            <!-- Tab Filtering Selection Switcher Button Array -->
+            <div class="flex gap-2 mb-4">
+                <button id="btn-tab-sql" onclick="showTab('sql')" class="py-2 px-4 text-xs font-bold rounded-lg border text-center transition bg-luxury-800 text-white border-luxury-gold">
+                    <i class="fa-solid fa-code mr-1.5"></i>PostgreSQL DDL
+                </button>
+                <button id="btn-tab-json" onclick="showTab('json')" class="py-2 px-4 text-xs font-bold rounded-lg border text-center transition bg-slate-950 text-slate-400 border-slate-800 hover:text-white">
+                    <i class="fa-solid fa-brackets-curly mr-1.5"></i>API JSON Payload
+                </button>
+            </div>
+
+            <!-- DDL Code Display Block -->
+            <div id="tab-sql" class="bg-slate-950 p-6 rounded-xl border border-slate-800 font-mono text-xs overflow-x-auto leading-relaxed shadow-inner">
+                <pre class="text-slate-300 select-all"><span class="text-slate-500">-- Enable UUID extension</span>
+<span class="text-rose-400 font-semibold">CREATE EXTENSION IF NOT EXISTS</span> <span class="text-emerald-400">"uuid-ossp"</span>;
+
+<span class="text-slate-500">-- Define Supplier Types</span>
+<span class="text-rose-400 font-semibold">CREATE TYPE</span> <span class="text-amber-400">supplier_category</span> <span class="text-rose-400 font-semibold">AS ENUM</span> (<span class="text-emerald-400">'DROPSHIPPER'</span>, <span class="text-emerald-400">'WHOLESALE'</span>, <span class="text-emerald-400">'MARKETPLACE'</span>);
+
+<span class="text-slate-500">-- TABLE: B2B Supply Nodes (The Core Link Matrix)</span>
+<span class="text-rose-400 font-semibold">CREATE TABLE</span> <span class="text-amber-400">suppliers</span> (
+    <span class="text-sky-400">id</span>                    UUID <span class="text-rose-400 font-semibold">PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+    <span class="text-sky-400">name</span>                  VARCHAR(<span class="text-purple-400">255</span>) <span class="text-rose-400 font-semibold">NOT NULL</span>,
+    <span class="text-sky-400">b2b_url</span>               VARCHAR(<span class="text-purple-400">512</span>) <span class="text-rose-400 font-semibold">NOT NULL</span>,
+    <span class="text-sky-400">category</span>              supplier_category <span class="text-rose-400 font-semibold">NOT NULL</span>,
+    <span class="text-sky-400">base_compliance_score</span> NUMERIC(<span class="text-purple-400">5</span>,<span class="text-purple-400">2</span>) <span class="text-rose-400 font-semibold">CHECK</span> (base_compliance_score &gt;= <span class="text-purple-400">0</span> <span class="text-rose-400 font-semibold">AND</span> base_compliance_score &lt;= <span class="text-purple-400">100</span>),
+    <span class="text-sky-400">created_at</span>            TIMESTAMP WITH TIME ZONE <span class="text-rose-400 font-semibold">DEFAULT CURRENT_TIMESTAMP</span>
+);
+
+<span class="text-slate-500">-- TABLE: Retail Storefronts</span>
+<span class="text-rose-400 font-semibold">CREATE TABLE</span> <span class="text-amber-400">retail_storefronts</span> (
+    <span class="text-sky-400">id</span>            UUID <span class="text-rose-400 font-semibold">PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+    <span class="text-sky-400">store_name</span>    VARCHAR(<span class="text-purple-400">255</span>) <span class="text-rose-400 font-semibold">NOT NULL</span>,
+    <span class="text-sky-400">contact_email</span> VARCHAR(<span class="text-purple-400">255</span>) UNIQUE <span class="text-rose-400 font-semibold">NOT NULL</span>,
+    <span class="text-sky-400">is_active</span>     BOOLEAN <span class="text-rose-400 font-semibold">DEFAULT TRUE</span>,
+    <span class="text-sky-400">created_at</span>    TIMESTAMP WITH TIME ZONE <span class="text-rose-400 font-semibold">DEFAULT CURRENT_TIMESTAMP</span>
+);
+
+<span class="text-slate-500">-- TABLE: Fulfillment Agreements (Cross-Reference Mapping)</span>
+<span class="text-rose-400 font-semibold">CREATE TABLE</span> <span class="text-amber-400">fulfillment_agreements</span> (
+    <span class="text-sky-400">id</span>                         UUID <span class="text-rose-400 font-semibold">PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+    <span class="text-sky-400">store_id</span>                   UUID <span class="text-rose-400 font-semibold">REFERENCES</span> retail_storefronts(id) <span class="text-rose-400 font-semibold">ON DELETE CASCADE</span>,
+    <span class="text-sky-400">supplier_id</span>                UUID <span class="text-rose-400 font-semibold">REFERENCES</span> suppliers(id) <span class="text-rose-400 font-semibold">ON DELETE CASCADE</span>,
+    <span class="text-sky-400">fulfillment_boundaries</span>     TEXT[] <span class="text-rose-400 font-semibold">NOT NULL</span>,
+    <span class="text-sky-400">agreement_compliance_score NUMERIC(<span class="text-purple-400">5</span>,<span class="text-purple-400">2</span>) <span class="text-rose-400 font-semibold">CHECK</span> (agreement_compliance_score &gt;= <span class="text-purple-400">0</span> <span class="text-rose-400 font-semibold">AND</span> agreement_compliance_score &lt;= <span class="text-purple-400">100</span>),
+    <span class="text-sky-400">has_unlisted_specs</span>         BOOLEAN <span class="text-rose-400 font-semibold">DEFAULT FALSE</span>,
+    <span class="text-sky-400">unlisted_specs_details</span>     JSONB,
+    <span class="text-sky-400">last_audited_at</span>            TIMESTAMP WITH TIME ZONE <span class="text-rose-400 font-semibold">DEFAULT CURRENT_TIMESTAMP</span>,
+    <span class="text-rose-400 font-semibold">UNIQUE</span>(store_id, supplier_id)
+);
+
+<span class="text-slate-500">-- INDEXES for fast UI sidebar querying</span>
+<span class="text-rose-400 font-semibold">CREATE INDEX</span> idx_fulfillment_store      <span class="text-rose-400 font-semibold">ON</span> fulfillment_agreements(store_id);
+<span class="text-rose-400 font-semibold">CREATE INDEX</span> idx_fulfillment_compliance <span class="text-rose-400 font-semibold">ON</span> fulfillment_agreements(agreement_compliance_score);</pre>
+            </div>
+
+            <!-- JSON Payload Display Block -->
+            <div id="tab-json" class="hidden bg-slate-950 p-6 rounded-xl border border-slate-800 font-mono text-xs overflow-x-auto leading-relaxed shadow-inner">
+                <pre class="text-emerald-400 select-all">[
+  {
+    <span class="text-sky-400">"agreement_id"</span>: <span class="text-amber-400">"a1b2c3d4-1234-5678-90ab-cdef12345678"</span>,
+    <span class="text-sky-400">"store_id"</span>: <span class="text-amber-400">"store-8831-alpha"</span>,
+    <span class="text-sky-400">"store_name"</span>: <span class="text-amber-400">"SleepVault Direct NY"</span>,
+    <span class="text-sky-400">"supplier"</span>: {
+      <span class="text-sky-400">"id"</span>: <span class="text-amber-400">"sup-001"</span>,
+      <span class="text-sky-400">"name"</span>: <span class="text-amber-400">"dropXL"</span>,
+      <span class="text-sky-400">"b2b_url"</span>: <span class="text-amber-400">"https://www.dropxl.com/beds-and-accessories.html"</span>,
+      <span class="text-sky-400">"category"</span>: <span class="text-amber-400">"DROPSHIPPER"</span>
+    },
+    <span class="text-sky-400">"compliance_score"</span>: <span class="text-purple-400">94.5</span>,
+    <span class="text-sky-400">"fulfillment_boundaries"</span>: [<span class="text-amber-400">"US-NY"</span>, <span class="text-amber-400">"US-NJ"</span>, <span class="text-amber-400">"US-CT"</span>, <span class="text-amber-400">"US-PA"</span>],
+    <span class="text-sky-400">"has_unlisted_specs"</span>: <span class="text-rose-400 font-semibold">false</span>,
+    <span class="text-sky-400">"unlisted_specs_details"</span>: <span class="text-rose-400 font-semibold">null</span>
+  },
+  {
+    <span class="text-sky-400">"agreement_id"</span>: <span class="text-amber-400">"b2c3d4e5-2345-6789-01bc-def012345679"</span>,
+    <span class="text-sky-400">"store_id"</span>: <span class="text-amber-400">"store-8831-alpha"</span>,
+    <span class="text-sky-400">"store_name"</span>: <span class="text-amber-400">"SleepVault Direct NY"</span>,
+    <span class="text-sky-400">"supplier"</span>: {
+      <span class="text-sky-400">"id"</span>: <span class="text-amber-400">"sup-002"</span>,
+      <span class="text-sky-400">"name"</span>: <span class="text-amber-400">"Mattress Makers"</span>,
+      <span class="text-sky-400">"b2b_url"</span>: <span class="text-amber-400">"https://mattressmakers.us/pages/wholesale"</span>,
+      <span class="text-sky-400">"category"</span>: <span class="text-amber-400">"WHOLESALE"</span>
+    },
+    <span class="text-sky-400">"compliance_score"</span>: <span class="text-purple-400">98.0</span>,
+    <span class="text-sky-400">"fulfillment_boundaries"</span>: [<span class="text-amber-400">"US-CA"</span>, <span class="text-amber-400">"US-NV"</span>, <span class="text-amber-400">"US-AZ"</span>],
+    <span class="text-sky-400">"has_unlisted_specs"</span>: <span class="text-rose-400 font-semibold">false</span>,
+    <span class="text-sky-400">"unlisted_specs_details"</span>: <span class="text-rose-400 font-semibold">null</span>
+  }
+  <span class="text-slate-500">// ... structural parameters continue</span>
+]</pre>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // State Machine Text Mapping Engines
+        const storeNames = {
+            'all': 'All Supplier Agreements',
+            'store-8831-alpha': 'SleepVault Direct NY',
+            'store-9942-beta': 'EcoSleep Boutique',
+            'store-1155-gamma': 'National Bedding Aggregator'
+        };
+        const storeSubs = {
+            'all': 'Showing all 6 active B2B supply agreements across 3 storefronts.',
+            'store-8831-alpha': 'Showing 2 supplier agreements mapped to SleepVault Direct NY.',
+            'store-9942-beta': 'Showing 2 supplier agreements mapped to EcoSleep Boutique.',
+            'store-1155-gamma': 'Showing 2 supplier agreements mapped to National Bedding Aggregator.'
+        };
+        const storeScores = {
+            'all': '87.5',
+            'store-8831-alpha': '96.3',
+            'store-9942-beta': '90.8',
+            'store-1155-gamma': '85.4'
+        };
+        const storeFlags = {
+            'all': '3', 
+            'store-8831-alpha': '0', 
+            'store-9942-beta': '2', 
+            'store-1155-gamma': '1'
+        };
+
+        // UI Filtration Management Engine
+        function filterStore(storeId) {
+            // Reset state layout classes across all layout buttons
+            document.querySelectorAll('.store-btn').forEach(btn => {
+                btn.className = "store-btn w-full py-3 px-4 text-xs text-left rounded-lg border border-slate-800 bg-slate-950 text-slate-400 hover:text-white hover:border-slate-700 transition duration-150 flex flex-col justify-between font-medium";
+            });
+
+            // Make clicked item look highlighted using luxury branding guidelines
+            const targetBtn = document.getElementById('btn-' + storeId) || document.getElementById('btn-all');
+            targetBtn.className = "store-btn w-full py-3 px-4 text-xs text-left rounded-lg border transition duration-150 flex flex-col justify-between bg-luxury-800 border-luxury-gold text-white font-semibold";
+
+            // Process visibility loops
+            const cards = document.querySelectorAll('.card');
+            let matchCount = 0;
+            
+            cards.forEach(card => {
+                const isMatch = storeId === 'all' || card.getAttribute('data-store') === storeId;
+                if (isMatch) {
+                    card.classList.remove('hidden');
+                    matchCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Toggle visibility of the empty state alert component
+            const emptyState = document.getElementById('empty-state');
+            if (matchCount === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+            }
+
+            // Sync structural telemetry components updates text layers smoothly
+            document.getElementById('page-title').textContent = storeNames[storeId] || storeId;
+            document.getElementById('page-sub').textContent = storeSubs[storeId] || '';
+            document.getElementById('avg-score').textContent = storeScores[storeId] || '—';
+            document.getElementById('flag-count').textContent = storeFlags[storeId] || '0';
+        }
+
+        // Tab Window Management Switching Infrastructure
+        function showTab(tabId) {
+            const sqlBtn = document.getElementById('btn-tab-sql');
+            const jsonBtn = document.getElementById('btn-tab-json');
+            const sqlContent = document.getElementById('tab-sql');
+            const jsonContent = document.getElementById('tab-json');
+
+            if (tabId === 'sql') {
+                sqlBtn.className = "py-2 px-4 text-xs font-bold rounded-lg border text-center transition bg-luxury-800 text-white border-luxury-gold";
+                jsonBtn.className = "py-2 px-4 text-xs font-bold rounded-lg border text-center transition bg-slate-950 text-slate-400 border-slate-800 hover:text-white";
+                sqlContent.classList.remove('hidden');
+                jsonContent.classList.add('hidden');
+            } else {
+                jsonBtn.className = "py-2 px-4 text-xs font-bold rounded-lg border text-center transition bg-luxury-800 text-white border-luxury-gold";
+                sqlBtn.className = "py-2 px-4 text-xs font-bold rounded-lg border text-center transition bg-slate-950 text-slate-400 border-slate-800 hover:text-white";
+                jsonContent.classList.remove('hidden');
+                sqlContent.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
