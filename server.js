@@ -13,13 +13,6 @@ const axios = require('axios');
 const crypto = require('crypto');
 
 const app = express();
-<<<<<<< HEAD
-
-=======
-app.get('/fo-verify.html', (req, res) => {
-    res.send('<meta name="fo-verify" content="22a2cf8e-1795-4ccf-9962-ee40e24ffb84" />');
-});
->>>>>>> 8df3ab057c4b4db9e1cdb5bad8feed0a5940badf
 // Ensure Express is configured to parse incoming JSON data
 app.use(express.json());
 
