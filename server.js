@@ -1,6 +1,6 @@
 console.log('EXECUTING FILE:', __filename);
 
- * High-Ticket Directory Aggregator Backend Engine (Node.js/Express + PostgreSQL)
+/* high-Ticket Directory Aggregator Backend Engine (Node.js/Express + PostgreSQL)
  * Implements:
  * 1. Subjective-to-Objective Dynamic Filter Routing (using PG JSONB)
  * 2. Nested JSON-LD Generative Engine Optimization (GEO) Generator
