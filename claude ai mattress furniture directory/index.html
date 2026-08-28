@@ -117,14 +117,14 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
         <!-- Hero and Matrix Metrics Summary Overview Banner -->
-        <section class="mb-12 text-center md:text-left md:flex md:items-center md:justify-between gap-8 bg-gradient-to-br from-slate-900 to-slate-950 p-8 rounded-2xl border border-slate-800 shadow-lg">
+        <section class="mb-12 text-center md:text-left md:flex md:items-center md:justify-between gap-8 bg-gradient-to-br from-slate-900 to-slate-950 p-8 rounded-2xl border border-slate-800 shado[...]">
             <div class="md:w-3/5">
                 <span class="text-xs uppercase text-luxury-goldlight font-bold tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Link Matrix Node Overview</span>
                 <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white mt-4 leading-tight">
                     Fulfillment Agreements &amp; <br class="hidden md:inline">Supply Nodes Monitor
                 </h1>
                 <p class="text-slate-400 mt-4 text-sm md:text-base leading-relaxed">
-                    Automated supply chain integrity tracker. SleepVault maps retail storefront instances to backend fulfillment parameters, wholesale legal constraints, and unlisted production telemetry.
+                    Automated supply chain integrity tracker. SleepVault maps retail storefront instances to backend fulfillment parameters, wholesale legal constraints, and unlisted production t[...]
                 </p>
                 <div class="flex flex-wrap gap-4 mt-6">
                     <div class="flex items-center text-xs text-slate-300 bg-slate-900 px-3 py-2 rounded-lg border border-slate-800">
@@ -172,22 +172,22 @@
 
                 <!-- Interactive Storefront Filtration Buttons -->
                 <div class="space-y-2 pt-2">
-                    <button id="btn-all" onclick="filterStore('all')" class="store-btn w-full py-3 px-4 text-xs text-left rounded-lg border transition duration-150 flex flex-col justify-between bg-slate-950 text-slate-400 hover:text-white hover:border-slate-700">
+                    <button id="btn-all" onclick="filterStore('all')" class="store-btn w-full py-3 px-4 text-xs text-left rounded-lg border transition duration-150 flex flex-col justify-between b[...]">
                         <span class="text-sm">All Stores</span>
                         <span class="text-[10px] text-slate-400 font-mono mt-1 font-normal">6 supplier agreements</span>
                     </button>
                     
-                    <button id="btn-store-8831-alpha" onclick="filterStore('store-8831-alpha')" class="store-btn w-full py-3 px-4 text-xs text-left rounded-lg border border-slate-800 bg-slate-950 text-slate-400 hover:text-white hover;border-slate-700">
+                    <button id="btn-store-8831-alpha" onclick="filterStore('store-8831-alpha')" class="store-btn w-full py-3 px-4 text-xs text-left rounded-lg border border-slate-800 bg-slate-950[...]">
                         <span class="text-sm">SleepVault Direct NY</span>
                         <span class="text-[10px] text-slate-500 font-mono mt-1 font-normal">store-8831-alpha</span>
                     </button>
 
-                    <button id="btn-store-9942-beta" onclick="filterStore('store-9942-beta')" class="store-btn w-full py-3 px-4 text-xs text-left rounded-lg border border-slate-800 bg-slate-950 text-slate-400 hover:text-white hover;border-slate-700">
+                    <button id="btn-store-9942-beta" onclick="filterStore('store-9942-beta')" class="store-btn w-full py-3 px-4 text-xs text-left rounded-lg border border-slate-800 bg-slate-950 t[...]">
                         <span class="text-sm">EcoSleep Boutique</span>
                         <span class="text-[10px] text-slate-500 font-mono mt-1 font-normal">store-9942-beta</span>
                     </button>
 
-                    <button id="btn-store-1155-gamma" onclick="filterStore('store-1155-gamma')" class="store-btn w-full py-3 px-4 text-xs text-left rounded-lg border border-slate-800 bg-slate-950 text-slate-400 hover:text-white hover;border-slate-700">
+                    <button id="btn-store-1155-gamma" onclick="filterStore('store-1155-gamma')" class="store-btn w-full py-3 px-4 text-xs text-left rounded-lg border border-slate-800 bg-slate-950[...]">
                         <span class="text-sm">National Bedding Aggregator</span>
                         <span class="text-[10px] text-slate-500 font-mono mt-1 font-normal">store-1155-gamma</span>
                     </button>
@@ -207,168 +207,290 @@
 
                 <!-- Dynamic Supplier Agreements Grid -->
                 <div id="product-directory-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Cards omitted for brevity in this commit (unchanged) -->
+                    <!-- CARD 1: dropXL -->
+                    <div class="card rounded-xl border border-slate-800 bg-slate-900 transition-all duration-300 flex flex-col overflow-hidden shadow-lg hover:shadow-xl" data-store="store-8831-alpha">
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-[10px] font-mono tracking-wider font-semibold py-0.5 px-2 rounded bg-purple-950/60 text-purple-400 border border-purple-900/40">DROPSHIPPER</span>
+                                    <h4 class="text-lg font-bold text-white mt-2">dropXL</h4>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[9px] text-slate-500 uppercase tracking-wider block">Compliance</span>
+                                    <span class="text-lg font-bold text-emerald-500">94.5<span class="text-xs text-slate-500 font-normal">/100</span></span>
+                                </div>
+                            </div>
+                            
+                            <!-- Custom Embedded Score Tracking Bar -->
+                            <div class="w-full bg-slate-950 rounded-full h-1 border border-slate-800 overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 94.5%"></div>
+                            </div>
+
+                            <div class="p-3.5 bg-slate-950 border border-slate-850 rounded-lg text-xs space-y-1.5 font-mono">
+                                <div class="flex justify-between"><span class="text-slate-500">Storefront:</span><span class="text-slate-300 font-sans">SleepVault Direct NY</span></div>
+                                <div class="flex justify-between items-start"><span class="text-slate-500 mr-2">Coverage:</span>
+                                    <div class="flex flex-wrap gap-1 justify-end max-w-[180px]">
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-NY</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-NJ</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-CT</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-PA</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-center text-xs py-1.5 border-y border-slate-800/60">
+                                <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check mr-1.5"></i>Verified Compliant</span>
+                                <span class="font-mono text-[10px] text-slate-500">AGR · a1b2c3d4</span>
+                            </div>
+
+                            <div class="pt-1">
+                                <a href="https://www.dropxl.com/beds-and-accessories.html" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-950 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 py-2 px-4 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5">
+                                    <span>Connect to Node Matrix</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2: Mattress Makers -->
+                    <div class="card rounded-xl border border-slate-800 bg-slate-900 transition-all duration-300 flex flex-col overflow-hidden shadow-lg hover:shadow-xl" data-store="store-8831-alpha">
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-[10px] font-mono tracking-wider font-semibold py-0.5 px-2 rounded bg-sky-950/60 text-sky-400 border border-sky-900/40">WHOLESALE</span>
+                                    <h4 class="text-lg font-bold text-white mt-2">Mattress Makers</h4>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[9px] text-slate-500 uppercase tracking-wider block">Compliance</span>
+                                    <span class="text-lg font-bold text-emerald-500">98.0<span class="text-xs text-slate-500 font-normal">/100</span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="w-full bg-slate-950 rounded-full h-1 border border-slate-800 overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 98%"></div>
+                            </div>
+
+                            <div class="p-3.5 bg-slate-950 border border-slate-850 rounded-lg text-xs space-y-1.5 font-mono">
+                                <div class="flex justify-between"><span class="text-slate-500">Storefront:</span><span class="text-slate-300 font-sans">SleepVault Direct NY</span></div>
+                                <div class="flex justify-between items-start"><span class="text-slate-500 mr-2">Coverage:</span>
+                                    <div class="flex flex-wrap gap-1 justify-end max-w-[180px]">
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-CA</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-NV</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-AZ</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-center text-xs py-1.5 border-y border-slate-800/60">
+                                <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check mr-1.5"></i>Verified Compliant</span>
+                                <span class="font-mono text-[10px] text-slate-500">AGR · b2c3d4e5</span>
+                            </div>
+
+                            <div class="pt-1">
+                                <a href="https://mattressmakers.us/pages/wholesale" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-950 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 py-2 px-4 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5">
+                                    <span>Connect to Node Matrix</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3: White Lotus Home -->
+                    <div class="card rounded-xl border border-slate-800 bg-slate-900 transition-all duration-300 flex flex-col overflow-hidden shadow-lg hover:shadow-xl" data-store="store-9942-beta">
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-[10px] font-mono tracking-wider font-semibold py-0.5 px-2 rounded bg-sky-950/60 text-sky-400 border border-sky-900/40">WHOLESALE</span>
+                                    <h4 class="text-lg font-bold text-white mt-2">White Lotus Home</h4>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[9px] text-slate-500 uppercase tracking-wider block">Compliance</span>
+                                    <span class="text-lg font-bold text-emerald-500">99.5<span class="text-xs text-slate-500 font-normal">/100</span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="w-full bg-slate-950 rounded-full h-1 border border-slate-800 overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 99.5%"></div>
+                            </div>
+
+                            <div class="p-3.5 bg-slate-950 border border-slate-850 rounded-lg text-xs space-y-1.5 font-mono">
+                                <div class="flex justify-between"><span class="text-slate-500">Storefront:</span><span class="text-slate-300 font-sans">EcoSleep Boutique</span></div>
+                                <div class="flex justify-between items-start"><span class="text-slate-500 mr-2">Coverage:</span>
+                                    <div class="flex flex-wrap gap-1 justify-end max-w-[180px]">
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-ALL</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Alert Structural Insertion Area -->
+                            <div class="bg-amber-950/20 border border-amber-900/30 p-3 rounded-lg text-xs text-amber-500 space-y-1">
+                                <div class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-triangle-exclamation"></i> Unlisted Spec Parameters Detected:</div>
+                                <div class="font-mono text-[10px] bg-slate-950 p-1 rounded border border-slate-850/60 inline-block text-amber-400">exact_cotton_harvest_origin_date</div>
+                            </div>
+
+                            <div class="flex justify-between items-center text-xs py-1.5 border-y border-slate-800/60">
+                                <span class="text-amber-500 font-semibold"><i class="fa-solid fa-triangle-exclamation mr-1.5"></i>Review Flagged</span>
+                                <span class="font-mono text-[10px] text-slate-500">AGR · c3d4e5f6</span>
+                            </div>
+
+                            <div class="pt-1">
+                                <a href="https://www.whitelotushome.com/white-lotus-home-information-center/wholesale-info.html" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-950 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 py-2 px-4 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5">
+                                    <span>Connect to Node Matrix</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 4: FoamTex USA -->
+                    <div class="card rounded-xl border border-slate-800 bg-slate-900 transition-all duration-300 flex flex-col overflow-hidden shadow-lg hover:shadow-xl" data-store="store-9942-beta">
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-[10px] font-mono tracking-wider font-semibold py-0.5 px-2 rounded bg-purple-950/60 text-purple-400 border border-purple-900/40">DROPSHIPPER</span>
+                                    <h4 class="text-lg font-bold text-white mt-2">FoamTex USA</h4>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[9px] text-slate-500 uppercase tracking-wider block">Compliance</span>
+                                    <span class="text-lg font-bold text-amber-500">82.0<span class="text-xs text-slate-500 font-normal">/100</span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="w-full bg-slate-950 rounded-full h-1 border border-slate-800 overflow-hidden">
+                                <div class="bg-amber-500 h-full rounded-full" style="width: 82%"></div>
+                            </div>
+
+                            <div class="p-3.5 bg-slate-950 border border-slate-850 rounded-lg text-xs space-y-1.5 font-mono">
+                                <div class="flex justify-between"><span class="text-slate-500">Storefront:</span><span class="text-slate-300 font-sans">EcoSleep Boutique</span></div>
+                                <div class="flex justify-between items-start"><span class="text-slate-500 mr-2">Coverage:</span>
+                                    <div class="flex flex-wrap gap-1 justify-end max-w-[180px]">
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-TX</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-OK</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-LA</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-NM</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-amber-500/10 border border-amber-500/20 p-3 rounded-lg text-xs text-amber-600 space-y-1.5">
+                                <div class="font-bold flex items-center gap-1.5 text-amber-500"><i class="fa-solid fa-circle-exclamation"></i> 2 Unlisted Spec Keys Located:</div>
+                                <div class="flex flex-wrap gap-1">
+                                    <span class="font-mono text-[9px] bg-slate-950 px-1.5 py-0.5 rounded border border-slate-850 text-amber-400">voc_emission_certification_link</span>
+                                    <span class="font-mono text-[9px] bg-slate-950 px-1.5 py-0.5 rounded border border-slate-850 text-amber-400">density_variance_tolerance</span>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-center text-xs py-1.5 border-y border-slate-800/60">
+                                <span class="text-amber-500 font-semibold"><i class="fa-solid fa-circle-exclamation mr-1.5"></i>Review Recommended</span>
+                                <span class="font-mono text-[10px] text-slate-500">AGR · d4e5f6g7</span>
+                            </div>
+
+                            <div class="pt-1">
+                                <a href="https://www.foamtexusa.com/dropshipping" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-950 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 py-2 px-4 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5">
+                                    <span>Connect to Node Matrix</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 5: Brooklyn Bedding -->
+                    <div class="card rounded-xl border border-slate-800 bg-slate-900 transition-all duration-300 flex flex-col overflow-hidden shadow-lg hover:shadow-xl" data-store="store-1155-gamma">
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-[10px] font-mono tracking-wider font-semibold py-0.5 px-2 rounded bg-sky-950/60 text-sky-400 border border-sky-900/40">WHOLESALE</span>
+                                    <h4 class="text-lg font-bold text-white mt-2">Brooklyn Bedding</h4>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[9px] text-slate-500 uppercase tracking-wider block">Compliance</span>
+                                    <span class="text-lg font-bold text-emerald-500">96.2<span class="text-xs text-slate-500 font-normal">/100</span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="w-full bg-slate-950 rounded-full h-1 border border-slate-800 overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 96.2%"></div>
+                            </div>
+
+                            <div class="p-3.5 bg-slate-950 border border-slate-850 rounded-lg text-xs space-y-1.5 font-mono">
+                                <div class="flex justify-between"><span class="text-slate-500">Storefront:</span><span class="text-slate-300 font-sans">National Bedding Aggregator</span></div>
+                                <div class="flex justify-between items-start"><span class="text-slate-500 mr-2">Coverage:</span>
+                                    <div class="flex flex-wrap gap-1 justify-end max-w-[180px]">
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">US-ALL</span>
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">CA-ALL</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-center text-xs py-1.5 border-y border-slate-800/60">
+                                <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check mr-1.5"></i>Verified Compliant</span>
+                                <span class="font-mono text-[10px] text-slate-500">AGR · e5f6g7h8</span>
+                            </div>
+
+                            <div class="pt-1">
+                                <a href="https://brooklynbedding.com/pages/wholesale" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-950 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 py-2 px-4 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5">
+                                    <span>Connect to Node Matrix</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 6: Syncee Marketplace -->
+                    <div class="card rounded-xl border border-slate-800 bg-slate-900 transition-all duration-300 flex flex-col overflow-hidden shadow-lg hover:shadow-xl" data-store="store-1155-gamma">
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-[10px] font-mono tracking-wider font-semibold py-0.5 px-2 rounded bg-pink-950/60 text-pink-400 border border-pink-900/40">MARKETPLACE</span>
+                                    <h4 class="text-lg font-bold text-white mt-2">Syncee Marketplace</h4>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[9px] text-slate-500 uppercase tracking-wider block">Compliance</span>
+                                    <span class="text-lg font-bold text-rose-500">74.5<span class="text-xs text-slate-500 font-normal">/100</span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="w-full bg-slate-950 rounded-full h-1 border border-slate-800 overflow-hidden">
+                                <div class="bg-rose-500 h-full rounded-full" style="width: 74.5%"></div>
+                            </div>
+
+                            <div class="p-3.5 bg-slate-950 border border-slate-850 rounded-lg text-xs space-y-1.5 font-mono">
+                                <div class="flex justify-between"><span class="text-slate-500">Storefront:</span><span class="text-slate-300 font-sans">National Bedding Aggregator</span></div>
+                                <div class="flex justify-between items-start"><span class="text-slate-500 mr-2">Coverage:</span>
+                                    <div class="flex flex-wrap gap-1 justify-end max-w-[180px]">
+                                        <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 text-[9px] rounded border border-slate-800">GLOBAL</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-rose-950/20 border border-rose-900/30 p-3 rounded-lg text-xs text-rose-400 space-y-1.5">
+                                <div class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-triangle-exclamation"></i> 2 Critical Unlisted Specs:</div>
+                                <div class="flex flex-col gap-1">
+                                    <span class="font-mono text-[9px] bg-slate-950 px-1.5 py-0.5 rounded border border-rose-900/40 text-rose-300 truncate">third_party_manufacturer_identities</span>
+                                    <span class="font-mono text-[9px] bg-slate-950 px-1.5 py-0.5 rounded border border-rose-900/40 text-rose-300 truncate">standardized_warranty_terms</span>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-center text-xs py-1.5 border-y border-slate-800/60">
+                                <span class="text-rose-500 font-semibold"><i class="fa-solid fa-circle-xmark mr-1.5"></i>High Risk Parameters</span>
+                                <span class="font-mono text-[10px] text-slate-500">AGR · f6g7h8i9</span>
+                            </div>
+
+                            <div class="pt-1">
+                                <a href="https://syncee.com/collections/1/products?search=mattresses&searchType=PRODUCTS" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-950 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 py-2 px-4 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5">
+                                    <span>Connect to Node Matrix</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Empty State Component View -->
+                    <div class="hidden col-span-2 py-12 text-center text-slate-500 border border-dashed border-slate-800 rounded-xl bg-slate-900/40" id="empty-state">
+                        <i class="fa-solid fa-folder-open text-3xl mb-3 text-slate-600"></i>
+                        <p class="text-sm">No supplier agreements mapped to this specific storefront endpoint.</p>
+                    </div>
+
                 </div>
 
-            </div>
-        </div>
 
-        <!-- ============================================================ -->
-        <!-- SCHEMA & API CODE BLOCK CONTAINER SECTION                    -->
-        <!-- ============================================================ -->
-        <section id="schema-reference" class="mt-16 pt-8 border-t-2 border-slate-800">
-            <div class="max-w-3xl mb-6">
-                <h3 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-                    <i class="fa-solid fa-database text-luxury-goldlight"></i> Schema &amp; Production API Reference
-                </h3>
-                <p class="text-sm text-slate-400 mt-1">
-                    Production-ready Relational PostgreSQL DDL definitions alongside mock JSON structured interaction payloads.
-                </p>
-            </div>
-
-            <!-- Tab Filtering Selection Switcher Button Array -->
-            <div class="flex gap-2 mb-4">
-                <button id="btn-tab-sql" onclick="showTab('sql')" class="py-2 px-4 text-xs font-bold rounded-lg border text-center transition bg-luxury-800 text-white border-luxury-gold">
-                    <i class="fa-solid fa-code mr-1.5"></i>PostgreSQL DDL
-                </button>
-                <button id="btn-tab-json" onclick="showTab('json')" class="py-2 px-4 text-xs font-bold rounded-lg border text-center transition bg-slate-950 text-slate-400 border-slate-800 hover:text-white">
-                    <i class="fa-solid fa-brackets-curly mr-1.5"></i>API JSON Payload
-                </button>
-            </div>
-
-            <!-- REPLACED: Public SQL/JSON removed for security -->
-            <div id="tab-sql" class="bg-slate-950 p-6 rounded-xl border border-slate-800 font-mono text-xs overflow-x-auto leading-relaxed shadow-inner">
-              <div id="schema-placeholder" class="text-slate-400">
-                <p class="mb-2">This site's production database DDL and example API payloads are hidden from public view for security reasons.</p>
-                <p class="mb-4">Authorized users can request a sanitized summary from the server. Raw SQL and full JSON examples are not exposed in public HTML.</p>
-                <div class="flex gap-2">
-                  <button id="btn-request-schema" class="py-2 px-3 rounded bg-luxury-goldlight text-black font-semibold">Request sanitized schema</button>
-                  <span id="schema-status" class="text-xs text-slate-400 self-center">Access requires authentication</span>
-                </div>
-                <div id="schema-result" class="mt-4 text-slate-300 text-xs font-mono"></div>
-              </div>
-            </div>
-
-            <div id="tab-json" class="hidden bg-slate-950 p-6 rounded-xl border border-slate-800 font-mono text-xs overflow-x-auto leading-relaxed shadow-inner">
-              <div class="text-slate-400">
-                <p class="mb-2">Example API payloads removed from public view.</p>
-                <p class="mb-2 text-xs">If you are an authorized user, click "Request sanitized schema" above to obtain a minimal, sanitized summary from the server.</p>
-              </div>
-            </div>
-
-        </section>
-    </main>
-
-    <script>
-        // State Machine Text Mapping Engines
-        const storeNames = {
-            'all': 'All Supplier Agreements',
-            'store-8831-alpha': 'SleepVault Direct NY',
-            'store-9942-beta': 'EcoSleep Boutique',
-            'store-1155-gamma': 'National Bedding Aggregator'
-        };
-        const storeSubs = {
-            'all': 'Showing all 6 active B2B supply agreements across 3 storefronts.',
-            'store-8831-alpha': 'Showing 2 supplier agreements mapped to SleepVault Direct NY.',
-            'store-9942-beta': 'Showing 2 supplier agreements mapped to EcoSleep Boutique.',
-            'store-1155-gamma': 'Showing 2 supplier agreements mapped to National Bedding Aggregator.'
-        };
-        const storeScores = {
-            'all': '87.5',
-            'store-8831-alpha': '96.3',
-            'store-9942-beta': '90.8',
-            'store-1155-gamma': '85.4'
-        };
-        const storeFlags = {
-            'all': '3', 
-            'store-8831-alpha': '0', 
-            'store-9942-beta': '2', 
-            'store-1155-gamma': '1'
-        };
-
-        // UI Filtration Management Engine
-        function filterStore(storeId) {
-            // Reset state layout classes across all layout buttons
-            document.querySelectorAll('.store-btn').forEach(btn => {
-                btn.className = "store-btn w-full py-3 px-4 text-xs text-left rounded-lg border border-slate-800 bg-slate-950 text-slate-400 hover:text-white hover;border-slate-700";
-            });
-
-            // Make clicked item look highlighted using luxury branding guidelines
-            const targetBtn = document.getElementById('btn-' + storeId) || document.getElementById('btn-all');
-            targetBtn.className = "store-btn w-full py-3 px-4 text-xs text-left rounded-lg border transition duration-150 flex flex-col justify-between bg-luxury-800 border-luxury-gold text-white";
-
-            // Process visibility loops
-            const cards = document.querySelectorAll('.card');
-            let matchCount = 0;
-            
-            cards.forEach(card => {
-                const isMatch = storeId === 'all' || card.getAttribute('data-store') === storeId;
-                if (isMatch) {
-                    card.classList.remove('hidden');
-                    matchCount++;
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-
-            // Toggle visibility of the empty state alert component
-            const emptyState = document.getElementById('empty-state');
-            if (matchCount === 0) {
-                emptyState.classList.remove('hidden');
-            } else {
-                emptyState.classList.add('hidden');
-            }
-
-            // Sync structural telemetry components updates text layers smoothly
-            document.getElementById('page-title').textContent = storeNames[storeId] || storeId;
-            document.getElementById('page-sub').textContent = storeSubs[storeId] || '';
-            document.getElementById('avg-score').textContent = storeScores[storeId] || '—';
-            document.getElementById('flag-count').textContent = storeFlags[storeId] || '0';
-        }
-
-        // Tab Window Management Switching Infrastructure
-        function showTab(tabId) {
-            const sqlBtn = document.getElementById('btn-tab-sql');
-            const jsonBtn = document.getElementById('btn-tab-json');
-            const sqlContent = document.getElementById('tab-sql');
-            const jsonContent = document.getElementById('tab-json');
-
-            if (tabId === 'sql') {
-                sqlBtn.className = "py-2 px-4 text-xs font-bold rounded-lg border text-center transition bg-luxury-800 text-white border-luxury-gold";
-                jsonBtn.className = "py-2 px-4 text-xs font-bold rounded-lg border text-center transition bg-slate-950 text-slate-400 border-slate-800 hover;text-white";
-                sqlContent.classList.remove('hidden');
-                jsonContent.classList.add('hidden');
-            } else {
-                jsonBtn.className = "py-2 px-4 text-xs font-bold rounded-lg border text-center transition bg-luxury-800 text-white border-luxury-gold";
-                sqlBtn.className = "py-2 px-4 text-xs font-bold rounded-lg border text-center transition bg-slate-950 text-slate-400 border-slate-800 hover;text-white";
-                jsonContent.classList.remove('hidden');
-                sqlContent.classList.add('hidden');
-            }
-        }
-
-        // Client fetch to request a sanitized schema summary from the server.
-        document.getElementById('btn-request-schema')?.addEventListener('click', async () => {
-          const statusEl = document.getElementById('schema-status');
-          const resultEl = document.getElementById('schema-result');
-          statusEl.textContent = 'Requesting…';
-          try {
-            const resp = await fetch('/api/schema', { credentials: 'include' });
-            if (!resp.ok) {
-              if (resp.status === 403) {
-                statusEl.textContent = 'Access denied — authentication required.';
-              } else {
-                statusEl.textContent = 'Schema unavailable: ' + resp.status;
-              }
-              return;
-            }
-            const body = await resp.json();
-            resultEl.textContent = body.summary || JSON.stringify(body, null, 2);
-            statusEl.textContent = 'Loaded (sanitized summary)';
-          } catch (err) {
-            console.error(err);
-            statusEl.textContent = 'Failed to fetch schema.';
-          }
-        });
-    </script>
-</body>
-</html>
